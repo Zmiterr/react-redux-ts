@@ -37,7 +37,7 @@ const initialState: UserState = {
     error: null
 }
 
-type UserAction =   FetchUserInterface | FetchUserSuccessInterface | FetchUserErrorInterface
+export type UserAction =   FetchUserInterface | FetchUserSuccessInterface | FetchUserErrorInterface
 
 export const userReducer = (state = initialState, action: UserAction): UserState => {
     switch (action.type) {
