@@ -1,5 +1,12 @@
+interface User {
+    id: number,
+    name: string,
+    username: string,
+    email: string
+}
+
 interface UserState {
-    users: any[],
+    users: User[],
     isLoading: boolean,
     error: null | string
 }
