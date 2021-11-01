@@ -49,11 +49,11 @@ export type UserAction =   FetchUserInterface | FetchUserSuccessInterface | Fetc
 export const userReducer = (state = initialState, action: UserAction): UserState => {
     switch (action.type) {
         case UserActionsTypes.FETCH_USERS:
-            return {users: [], isLoading: true,error: null}
+            return {...state, users: [], isLoading: true}
         case UserActionsTypes.FETCH_USERS_SUCCESS:
-            return {users: action.payload, isLoading: false,error: null}
+            return {...state, users: action.payload, isLoading: false}
         case UserActionsTypes.FETCH_USERS_ERROR:
-            return {users: [], isLoading: false,error: action.payload}
+            return {...state, isLoading: false,error: action.payload}
         default: return state
     }
 }
